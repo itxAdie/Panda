@@ -1,0 +1,123 @@
+observed,occurrences,sources,adjudication,canonical_id,note
+DHA Phase 2,76,elegant,open,,requires schema change before resolution
+LDA City,44,cdb_ph10;lre_lda;lre_sep;milkiyat_lahore,open,,requires schema change before resolution
+Bahria Town,37,cdb_ph10;elegant;lexform;lre_lda;milkiyat_lahore,open,,requires schema change before resolution
+Gulberg,32,milkiyat_lahore,open,,requires schema change before resolution
+Bahria,29,cdb_ph10;lexform;milkiyat_lahore,open,,requires schema change before resolution
+Phase 9,22,cdb_ph10;dha_rates;lre_sep;mohsin,open,,requires schema change before resolution
+DHA Phase 9,14,cdb_ph10;dha_rates;lre_lda;lre_sep;mohsin,open,,requires schema change before resolution
+Phase 7,13,dha_rates;elegant;lre_sep;mohsin,open,,requires schema change before resolution
+Phase 2,9,cdb_ph10;elegant;lre_lda,open,,requires schema change before resolution
+Phase 13,6,dha_rates,open,,requires schema change before resolution
+DHA Lahore Phase 10,5,cdb_ph10;dha_rates;mohsin,open,,requires schema change before resolution
+DHA Lahore Phase 9,5,dha_rates;lre_lda,open,,requires schema change before resolution
+Phase 6,5,elegant;lre_lda;lre_sep;mohsin,open,,requires schema change before resolution
+Block 4,4,mohsin,open,,requires schema change before resolution
+Phase 1,3,cdb_ph10;elegant,open,,requires schema change before resolution
+DHA Lahore Phase 13,3,dha_rates,open,,requires schema change before resolution
+Phase 8,3,elegant;lre_sep,open,,requires schema change before resolution
+Block 1,3,lre_lda;mohsin,open,,requires schema change before resolution
+Phase 5,3,lre_lda;milkiyat_lahore,open,,requires schema change before resolution
+Phase 4,2,cdb_ph10,open,,requires schema change before resolution
+DHA Lahore Phase 10 (Phase X),2,dha_rates,open,,requires schema change before resolution
+DHA Lahore Phase 7,2,dha_rates,open,,requires schema change before resolution
+DHA Phase 9 Prism 5,2,dha_rates,open,,requires schema change before resolution
+DHA Phase 9 Town 5,2,dha_rates,open,,requires schema change before resolution
+Phase9,2,dha_rates,open,,requires schema change before resolution
+DHA Phase 1,2,milkiyat_lahore,open,,requires schema change before resolution
+DHA Phase 8 CCA3,2,mohsin,open,,requires schema change before resolution
+Block 5,2,mohsin,open,,requires schema change before resolution
+DHA Phase 7 CCA1,2,mohsin,open,,requires schema change before resolution
+Phase2,1,cdb_ph10,open,,requires schema change before resolution
+Phase 3,1,cdb_ph10,open,,requires schema change before resolution
+DHA Phase 9 Town DHA,1,dha_rates,open,,requires schema change before resolution
+DHA Phase 9 Prism 10,1,dha_rates,open,,requires schema change before resolution
+DHA Phase 7 Files DHA,1,dha_rates,open,,requires schema change before resolution
+Phase10,1,dha_rates,open,,requires schema change before resolution
+PhaseX,1,dha_rates,open,,requires schema change before resolution
+Phase13,1,dha_rates,open,,requires schema change before resolution
+Phase7,1,dha_rates,open,,requires schema change before resolution
+Phase-9,1,dha_rates,open,,requires schema change before resolution
+Phase3,1,dha_rates,open,,requires schema change before resolution
+DHA Phase 2 Beyond 2025,1,elegant,open,,requires schema change before resolution
+Phase-2,1,lre_lda,open,,requires schema change before resolution
+DHA Phase 6 CCA-3,1,lre_sep,open,,requires schema change before resolution
+DHA Phase 7 Files 4,1,lre_sep,open,,requires schema change before resolution
+DHA Phase 10 Files 8,1,lre_sep,open,,requires schema change before resolution
+DHA Rahbar Sector-4,1,lre_sep,open,,requires schema change before resolution
+Phase 5 (M-Extension),1,lre_sep,open,,requires schema change before resolution
+Phase 11 (Rahbar Sec-4),1,lre_sep,open,,requires schema change before resolution
+Phase 13 (Ex-DHA City),1,lre_sep,open,,requires schema change before resolution
+DHA Phase 9 Prism DHA,1,mohsin,open,,requires schema change before resolution
+DHA Phase 9 Prism L,12,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 9 Prism R,10,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 9 Prism B,10,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+Sector A,8,burst;lre_lda;mohsin,harness_artifact,,trailing prose token; NOT a map failure
+Sector B,7,burst;lre_lda,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase X,6,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 9 Prism F,6,dha_rates;lre_sep;mohsin,harness_artifact,,trailing prose token; NOT a map failure
+Sector S,5,burst,harness_artifact,,trailing prose token; NOT a map failure
+Sector Z,4,lre_sep,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 8 Lahore - N,4,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+Sector D,3,burst;lre_lda,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Balloting U,2,cdb_ph10,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Hamza S,2,cdb_ph10,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 File R,2,cdb_ph10;dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 13 Allocation F,2,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Commercial A,2,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Lahore Phase 9 Prism Sector N,2,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Lahore Phase 9 Prism Sector L,2,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 7 DHA P,2,dha_rates;mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 9 Town F,2,dha_rates;lre_sep,harness_artifact,,trailing prose token; NOT a map failure
+DHA Lahore Phase 9 Prism R,2,lre_lda,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 6 Plots F,2,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 6 Block D,2,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 8 Block S,2,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 8 Commercial B,2,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 9 Prism Q,2,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 7 Block Q,2,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 8 Y B,2,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 8 Block Y,2,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Installment P,2,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+Sector T,1,burst,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Worth B,1,cdb_ph10,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 09 Prism L,1,cdb_ph10,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Dolmen M,1,cdb_ph10,harness_artifact,,trailing prose token; NOT a map failure
+DHA Lahore Phase 13 Files P,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 File I,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Lahore Phase 9 Prism F,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Lahore Phase 7 Files P,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 7 Files I,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Lahore Phase 9 Town F,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 13 Other DHA,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Files DHA,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 File P,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase X File P,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Latest R,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Daily R,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Files P,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase X Files P,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Allocation F,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Affidavit F,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase X Allocation F,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase X Affidavit F,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Commercial F,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 10 Latest F,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase X Latest U,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+Sector L,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Lahore Phase 5 DHA L,1,dha_rates,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 2 You N,1,elegant,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 6 Near R,1,elegant,harness_artifact,,trailing prose token; NOT a map failure
+DHA Lahore Phase 7 Block T,1,elegant,harness_artifact,,trailing prose token; NOT a map failure
+DHA Lahore Phase 6 (Near DHA,1,lre_sep,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase IX Prism L,1,lre_sep,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 1 DHA P,1,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 3 DHA P,1,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 5 DHA P,1,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 1 Lahore D,1,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 9 Town P,1,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 9 Town B,1,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 9 Prism G,1,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Lahore Phase 7 Plot P,1,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 9 Prism H,1,mohsin,harness_artifact,,trailing prose token; NOT a map failure
+DHA Phase 7 Block Y,1,mohsin,harness_artifact,,trailing prose token; NOT a map failure

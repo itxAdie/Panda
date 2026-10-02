@@ -1,0 +1,31 @@
+dimension,source_form,canonical_value,unit,notes
+size,5 Marla,5,marla,
+size,5-Marla,5,marla,hyphenated
+size,5-M,5,marla,
+size,5M,5,marla,no space
+size,7 Marla,7,marla,
+size,7-Marla,7,marla,
+size,8 Marla,8,marla,
+size,10 Marla,10,marla,
+size,10-Marla,10,marla,
+size,20 Marla,20,marla,published interchangeably with 1 Kanal
+size,20 Marla / 1 Kanal,20,marla,source asserts equivalence; canonical 20 marla
+size,1 Kanal,20,marla,KANAL=20 marla; one canonical size two aliases
+size,2 Kanal,40,marla,
+size,3 Marla,3,marla,LDA City Pine Sector only
+size,4 Marla,4,marla,also commercial category
+currency,Lac,lakh,PKR,
+currency,Lakh,lakh,PKR,
+currency,Lacs,lakh,PKR,plural
+currency,Crore,crore,PKR,
+currency,Cr,crore,PKR,abbreviated
+currency,PKR 43.75L,lakh,PKR,L-suffix compound e.g. 43.75L = 43.75 lakh
+currency,Rs,lakh,PKR,
+category,Allocation,allocation,file_type,file status NOT a size
+category,Affidavit,affidavit,file_type,file status NOT a size
+category,Barcode,barcode,file_type,file status
+category,Balloted,balloted,file_status,
+category,Unballoted,unballoted,file_status,
+category,CCA-3,cca3,commercial_category,NOT a place and NOT a size
+category,CCA-1,cca1,commercial_category,NOT a place and NOT a size
+category,CCA-3 (4 Marla),cca3,commercial_category,category + size combined

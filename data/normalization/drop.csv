@@ -1,0 +1,22 @@
+alias_text,reason,source_id,evidence_state,evidence_note
+DHA City,Refers to 3+ distinct things: Ph13 Ex-DHA City; DHA City Karachi; site-nav label for DHA Lahore,dharealestate.pk,confirmed,6 occ in 2 sources; 3+ referents
+Phase 9 Extension,Single-sourced former name of phase 10; no date boundary established,cdbrealestate.com,confirmed,"1 occ, 1 source"
+Phase 9 (bare),Ambiguous across Prism / Town / Extension,multiple,confirmed,22 occ in 5 sources; Prism/Town/Extension
+DHA Lahore (bare as phase),Sometimes society sometimes phase 6,lahorerealestate.com,untested,0 occ in any fetched page
+N Block (unqualified),Block letters repeat across schemes,lahorerealestate.com,confirmed,19 occ in 5 sources
+M Block (unqualified),Block letters repeat across schemes,lahorerealestate.com,confirmed,10 occ
+L Block (unqualified),Block letters repeat across schemes,lahorerealestate.com,confirmed,7 occ
+Sector A (bare),Sector letters repeat across Bahria and Askari 10,multiple,confirmed,8 occ; resolvable via document scope; drop is fallback only; RETRACTED - multi-society even within one document (validation-R1-R6.md)
+Sector F (bare),Sector letters repeat across Bahria and Askari 10,multiple,confirmed,21 occ; resolvable via document scope; drop is fallback only; RETRACTED - multi-society even within one document (validation-R1-R6.md)
+Block B (bare),Block letters meaningless without phase,maanestate.com,confirmed,1 occ
+Block D (bare),Block letters meaningless without phase,maanestate.com,confirmed,6 occ
+Block S (bare),Block letters meaningless without phase,maanestate.com,confirmed,2 occ
+Block X (bare),Block letters meaningless without phase,maanestate.com,untested,0 occ in any fetched page
+Model Town,No source publishes at entity level; coverage gap must stay visible,milkiyat.com,confirmed,18 occ; coverage gap
+Johar Town,No source publishes at entity level; coverage gap must stay visible,milkiyat.com,confirmed,10 occ; coverage gap
+Faisal Town,No source publishes at entity level; coverage gap must stay visible,milkiyat.com,untested,0 occ in any fetched page
+Ring Road periphery,No source publishes at entity level; coverage gap must stay visible,milkiyat.com,confirmed,30 occ; coverage gap
+On Call,Not a fact; store as rate null with unavailable flag,lahorerealestate.com,not_a_place,"15 occ; store as rate=null, rate_unavailable=true"
+Call us for Rates,Not a fact; store as rate null with unavailable flag,lahorerealestate.com,not_a_place,"5 occ; store as rate=null, rate_unavailable=true"
+Sector B (bare),Sector letters repeat across Bahria Town and Askari 10; ambiguous without document scope,burst;cdbrealestate;lre_lda;milkiyat,confirmed,10 occ in 4 sources; ADDED - was missing from drop list
+DHA Phase 1-4 (bare),"CROSS-CITY: DHA Phases 1-4 exist in BOTH Lahore and Islamabad. 42 bare refs sit in an Islamabad-context page (DHA Islamabad vs Bahria Town Rawalpindi, GT Road). Must not resolve to Lahore",mohsinestate;milkiyat,confirmed,159 bare occurrences; 42 Islamabad-contaminated. Lahore-qualified form is aliased separately

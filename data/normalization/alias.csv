@@ -1,0 +1,28 @@
+alias_text,canonical_id,evidence,evidence_url,confirmed
+DHA Ph 6,ph_dha_6,Multiple sources same phase,https://dharealestate.pk/,true
+DHA Phase 6,ph_dha_6,Multiple sources same phase,https://dharealestate.pk/,true
+DHA Phase VI,ph_dha_6,Roman numeral variant,https://lahorerealestate.com/,true
+Defence Phase 6,ph_dha_6,Authority name variant,https://techx.pk/,true
+DHA Lahore Phase 6,ph_dha_6,Qualified form,https://lahorerealestate.com/,true
+DHA P6,ph_dha_6,Abbreviated,https://techx.pk/,true
+Phase 10,ph_dha_10,Bare phase form,https://dharealestate.pk/,true
+Phase X,ph_dha_10,Source heading equates: DHA Phase 10 (Phase X),https://dharealestate.pk/dha-lahore-files-prices-allocation-affidavit-rates-phase-13-phase-10-phase-9-prism-phase-7-phase-9-town/,true
+DHA Phase 10 (Phase X),ph_dha_10,Source heading literally contains both,https://dharealestate.pk/dha-lahore-files-prices-allocation-affidavit-rates-phase-13-phase-10-phase-9-prism-phase-7-phase-9-town/,true
+Ph 13 (Ex-DHA City),ph_dha_13,Published as Phase 13 (Ex-DHA City) Files,https://lahorerealestate.com/latest-dha-file-rates-market-overview-september-26-2026/,true
+DHA Phase 13,ph_dha_13,Plain form,https://dharealestate.pk/,true
+Ph 11 (Rahbar),ph_dha_11_rahbar,Published as Phase 11 (Rahbar Sec-4),https://lahorerealestate.com/latest-dha-file-rates-market-overview-september-26-2026/,true
+Rahbar Sec-4,sec_dha_11_rahbar_4,"Published as ""DHA Rahbar Sector-4"" and ""Phase 11 (Rahbar Sec-4)"" - Sec-4 is nested inside phase 11",https://dharealestate.pk/dha-all-files-latest-market-rates-complete-investment-guide-land-cost-only-updated-27-november-2025/,true
+DHA Rahbar,ph_dha_11_rahbar,Published as DHA Rahbar (Phase-11 Sec-4),https://dharealestate.pk/dha-all-files-latest-market-rates-complete-investment-guide-land-cost-only-updated-27-november-2025/,true
+Z Block,blk_dha_8_z,Separate rate line in phase 8 table,https://dharealestate.pk/dha-all-files-latest-market-rates-complete-investment-guide-land-cost-only-updated-27-november-2025/,true
+IVY Green - Z Block,blk_dha_8_z,Same block named with development,https://dharealestate.pk/dha-all-files-latest-market-rates-complete-investment-guide-land-cost-only-updated-27-november-2025/,true
+Sector C (Main Boulevard),sec_bahria_c,Sector table,https://asaspropertiespk.com/dha-lahore-vs-bahria-town-lahore-which-is-the-better-investment-in-2026/,true
+Sector F (Talha; Safari),sec_bahria_f,Sector table,https://asaspropertiespk.com/dha-lahore-vs-bahria-town-lahore-which-is-the-better-investment-in-2026/,true
+Sector E (Johar; Iqbal),sec_bahria_e,Sector table,https://asaspropertiespk.com/dha-lahore-vs-bahria-town-lahore-which-is-the-better-investment-in-2026/,true
+Phase 5 (M-Extension),ph_dha_5_mext,Listed separately from phase 5,https://lahorerealestate.com/latest-dha-file-rates-market-overview-september-26-2026/,true
+Lake City Lahore Files,soc_lake_city,Rate section,https://lahorerealestate.com/latest-dha-file-rates-market-overview-september-26-2026/,true
+Askari 10,soc_askari_10,Used throughout,https://burstforum.com/askari-10-lahore-property-prices-and-rental-yields-in-2026/,true
+Gulberg III,soc_gulberg_iii,Area guide,https://milkiyat.com/articles/gulberg-lahore-property-investment-guide-2026,true
+DHA Lahore Phase 1,ph_dha_1,Source uses the Lahore-qualified form explicitly,https://lahorerealestate.com/phase-1-4/,true
+DHA Lahore Phase 2,ph_dha_2,Source uses the Lahore-qualified form explicitly,https://lahorerealestate.com/phase-1-4/,true
+DHA Lahore Phase 3,ph_dha_3,Source uses the Lahore-qualified form explicitly,https://lahorerealestate.com/phase-1-4/,true
+DHA Lahore Phase 4,ph_dha_4,Source uses the Lahore-qualified form explicitly,https://lahorerealestate.com/phase-1-4/,true

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Panda — Variant B: Evidence first</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{
+    --bg:#ffffff; --bg-soft:#f7f7f8; --bg-hover:#ececec; --sidebar:#f7f7f8;
+    --ink:#0d0d0d; --ink-2:#5d5d5d; --ink-3:#8f8f8f; --line:#e5e5e5;
+    --accent:#10a37f; --warn-bg:#fff8e6; --warn-line:#d9a441; --warn-ink:#6b4a06;
+    --src:#0b6bcb; --sb:250px;
+  }
+  [data-theme="dark"]{
+    --bg:#212121; --bg-soft:#2f2f2f; --bg-hover:#3a3a3a; --sidebar:#171717;
+    --ink:#ececec; --ink-2:#b4b4b4; --ink-3:#8f8f8f; --line:#303030;
+    --warn-bg:#332a12; --warn-line:#8a6a1f; --warn-ink:#f0d089; --src:#6aa9f0;
+  }
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .app{display:flex;height:100dvh;overflow:hidden}
+
+  .sidebar{width:var(--sb);flex:0 0 var(--sb);background:var(--sidebar);
+    display:flex;flex-direction:column;border-right:1px solid var(--line)}
+  .sb-head{padding:10px 10px 8px;display:flex;gap:8px;align-items:center}
+  .newbtn{flex:1;display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:10px;
+    border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;
+    font-size:14px;font-family:inherit;text-align:left}
+  .newbtn:hover{background:var(--bg-hover)}
+  .iconbtn{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;border-radius:9px;
+    border:1px solid transparent;background:transparent;color:var(--ink-2);cursor:pointer}
+  .iconbtn:hover{background:var(--bg-hover)}
+  .sb-scroll{flex:1;overflow-y:auto;padding:4px 8px 12px}
+  .sb-label{font-size:11.5px;color:var(--ink-3);padding:12px 10px 6px}
+  .thread{padding:8px 10px;border-radius:9px;color:var(--ink-2);font-size:13.5px;cursor:pointer;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:1px solid transparent}
+  .thread:hover{background:var(--bg-hover);color:var(--ink)}
+  .thread.active{background:var(--bg-hover);color:var(--ink)}
+  .sb-foot{padding:8px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3)}
+
+  .main{flex:1;min-width:0;display:flex;flex-direction:column}
+  .topbar{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--line)}
+  .topbar .title{font-size:14.5px;font-weight:500;flex:1;min-width:0;overflow:hidden;
+    text-overflow:ellipsis;white-space:nowrap}
+  .cov{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-2);
+    padding:4px 10px;border:1px solid var(--line);border-radius:20px;white-space:nowrap}
+  .cov i{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:0 0 6px}
+  .menubtn{display:none}
+
+  .scroll{flex:1;overflow-y:auto;padding-bottom:10px}
+  .col{max-width:820px;margin:0 auto;padding:0 16px}
+
+  .empty{min-height:100%;display:flex;flex-direction:column;justify-content:center;
+    align-items:center;text-align:center;padding:32px 0 120px}
+  .empty h1{font-size:28px;font-weight:600;margin:0 0 6px;letter-spacing:-.02em}
+  .empty p{color:var(--ink-2);margin:0 0 26px;font-size:15px;max-width:460px}
+  .chips{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:640px;text-align:left}
+  .chip{border:1px solid var(--line);background:transparent;border-radius:12px;padding:13px 15px;
+    cursor:pointer;color:var(--ink);font:inherit;font-size:14px}
+  .chip:hover{background:var(--bg-soft)}
+  .chip b{display:block;font-weight:500;margin-bottom:2px}
+  .chip span{color:var(--ink-2);font-size:13px}
+
+  .msg{padding:24px 0}
+  .who{display:flex;align-items:center;gap:9px;margin-bottom:10px}
+  .av{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:11px;
+    font-weight:700;flex:0 0 26px;background:var(--accent);color:#fff}
+  .av.u{background:var(--ink-3)}
+  .who b{font-size:14.5px;font-weight:600}
+  .ask{border:1px solid var(--line);background:var(--bg-soft);border-radius:12px;
+    padding:13px 15px;font-size:15px;margin-bottom:14px}
+
+  /* headline answer, evidence always expanded */
+  .lead{font-size:19px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px;line-height:1.35}
+  .lede{color:var(--ink-2);font-size:14px;margin:0 0 16px}
+
+  .ev{border:1px solid var(--line);border-radius:12px;margin:0 0 12px;overflow:hidden}
+  .ev-h{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--bg-soft);
+    border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .ev-h .pt{font-weight:600;font-size:14.5px;flex:1;min-width:0}
+  .tag{font-size:11px;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;
+    border-radius:5px;background:var(--accent);color:#fff;font-weight:600}
+  .ev-b{padding:13px 14px}
+  .big{font-size:22px;font-weight:650;letter-spacing:-.02em;margin-bottom:2px}
+  .sub{font-size:13px;color:var(--ink-2);margin-bottom:12px}
+  .spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:12px}
+  .spec div{background:var(--bg);padding:8px 10px}
+  .spec dt{font-size:10.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin:0 0 2px}
+  .spec dd{margin:0;font-size:13.5px;font-weight:500}
+  .quote{font-size:13.5px;color:var(--ink-2);border-left:3px solid var(--accent);
+    padding:2px 0 2px 12px;margin:0 0 12px}
+  .srcline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;
+    padding-top:11px;border-top:1px solid var(--line)}
+  .srcline a{color:var(--src);text-decoration:none;word-break:break-all;flex:1;min-width:0}
+  .srcline a:hover{text-decoration:underline}
+
+  .none{border-color:var(--warn-line);background:var(--warn-bg);border-radius:12px;padding:16px}
+  .none h2{font-size:16.5px;margin:0 0 8px;color:var(--warn-ink)}
+  .none p{margin:0 0 10px;font-size:14px}
+  .none .hard{font-weight:600;border-top:1px solid var(--warn-line);padding-top:11px;margin-bottom:0}
+
+  .composer{padding:10px 16px calc(14px + env(safe-area-inset-bottom))}
+  .composer-in{max-width:820px;margin:0 auto}
+  .box{border:1px solid var(--line);border-radius:26px;background:var(--bg);
+    padding:8px 8px 8px 18px;display:flex;align-items:flex-end;gap:8px}
+  .box:focus-within{border-color:var(--ink-3)}
+  .box textarea{flex:1;border:0;outline:0;resize:none;background:transparent;color:var(--ink);
+    font:inherit;font-size:16px;line-height:1.45;padding:8px 0;max-height:180px}
+  .box textarea::placeholder{color:var(--ink-3)}
+  .send{width:34px;height:34px;flex:0 0 34px;border-radius:50%;border:0;background:var(--ink);
+    color:var(--bg);display:grid;place-items:center;cursor:pointer}
+  .send:disabled{background:var(--bg-hover);color:var(--ink-3)}
+  .hint{text-align:center;font-size:11.5px;color:var(--ink-3);margin-top:7px}
+  .scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9}
+  .scrim.on{display:block}
+
+  @media (max-width:860px){
+    :root{--sb:264px}
+    .sidebar{position:fixed;inset:0 auto 0 0;z-index:10;transform:translateX(-100%);
+      transition:transform .22s ease;box-shadow:0 0 40px rgba(0,0,0,.18)}
+    body.nav .sidebar{transform:none}
+    .menubtn{display:grid}
+    .col{padding:0 14px}
+    .chips{grid-template-columns:1fr}
+    .composer{padding:8px 12px calc(12px + env(safe-area-inset-bottom))}
+    .cov{font-size:0;padding:4px 8px}
+    .cov i{margin:0}
+  }
+  @media (max-width:420px){
+    .empty h1{font-size:23px}
+    .big{font-size:19px}
+    .spec{grid-template-columns:1fr 1fr}
+    .box{padding-left:14px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="scrim" id="scrim"></div>
+  <aside class="sidebar">
+    <div class="sb-head">
+      <button class="newbtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>New search</button>
+      <button class="iconbtn" onclick="document.body.classList.remove('nav');document.getElementById('scrim').classList.remove('on')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    </div>
+    <div class="sb-scroll">
+      <div class="sb-label">Today</div>
+      <div class="thread active">4 marla allocation in DHA Phase 7</div>
+      <div class="thread">balloting in DHA Phase 10</div>
+      <div class="sb-label">Yesterday</div>
+      <div class="thread">fees in DHA Phase 6</div>
+      <div class="sb-label">Previous 7 days</div>
+      <div class="thread">possession status Phase 9 Prism</div>
+      <div class="thread">rates under 30 lac anywhere</div>
+    </div>
+    <div class="sb-foot">Corpus: 10 facts · 10 sources</div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <button class="iconbtn menubtn" id="menu" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <div class="title">Panda — Lahore property knowledge</div>
+      <div class="cov"><i></i>10 facts</div>
+      <button class="iconbtn" onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></button>
+    </div>
+
+    <div class="scroll">
+      <div class="col empty">
+        <h1>What do you want to know about Lahore property?</h1>
+        <p>Ask in your own words. Every answer is quoted, dated and attributed.</p>
+        <div class="chips">
+          <button class="chip"><b>4 marla allocation in DHA Phase 7</b><span>Rate, with source and date</span></button>
+          <button class="chip"><b>balloting in DHA Phase 10</b><span>Status, not opinion</span></button>
+          <button class="chip"><b>10 marla under 55 lac</b><span>Budget search across phases</span></button>
+          <button class="chip"><b>fees in DHA Phase 6</b><span>Transfer and membership costs</span></button>
+        </div>
+      </div>
+
+      <div class="col" style="display:none" id="thread">
+        <div class="msg">
+          <div class="who"><div class="av u">Y</div><b>You</b></div>
+          <div class="ask">4 marla allocation in DHA Phase 7</div>
+        </div>
+        <div class="msg">
+          <div class="who"><div class="av">P</div><b>Panda</b></div>
+          <p class="lead">133.00 Lacs</p>
+          <p class="lede">Reported allocation rate for 4 marla in DHA Phase 7.</p>
+
+          <div class="ev">
+            <div class="ev-h"><div class="pt">DHA Phase 7</div><span class="tag">rate</span></div>
+            <div class="ev-b">
+              <div class="big">4.00 marla allocation = 133.00 Lacs</div>
+              <div class="sub">Asking price reported by an agency listing.</div>
+              <dl class="spec">
+                <div><dt>Size</dt><dd>4.00 marla</dd></div>
+                <div><dt>File type</dt><dd>Allocation</dd></div>
+                <div><dt>Qualifier</dt><dd>Complete</dd></div>
+              </dl>
+              <p class="quote">"DHA Phase 7 Files 4 Marla Affidavit: NA 4 Marla Allocation: 133.00 Lacs"</p>
+              <div class="srcline">
+                <a href="#">dharealestate.pk › dha-phase-7-files</a>
+                <span>as of 26 Sep 2026</span>
+              </div>
+            </div>
+          </div>
+          <p class="lede">An asking price, not a transaction. Verify with DHA, LDA and a lawyer.</p>
+        </div>
+
+        <div class="msg">
+          <div class="who"><div class="av u">Y</div><b>You</b></div>
+          <div class="ask">balloting status in DHA Phase 12</div>
+        </div>
+        <div class="msg">
+          <div class="who"><div class="av">P</div><b>Panda</b></div>
+          <div class="none">
+            <h2>The corpus holds no evidence matching that query.</h2>
+            <p>I searched stored facts for DHA Phase 12. That search returned 0 facts covering 0 places.</p>
+            <p class="hard">This is a statement about my corpus only. It is not a statement about the Lahore market. Verify anything that matters with DHA, LDA and a lawyer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="composer">
+      <div class="composer-in">
+        <div class="box">
+          <textarea rows="1" placeholder="Ask about any area in Lahore"></textarea>
+          <button class="send" disabled><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+        </div>
+        <div class="hint">Corpus, not the market · verify with DHA, LDA and a lawyer</div>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+  const menu=document.getElementById('menu'),scrim=document.getElementById('scrim');
+  menu.addEventListener('click',()=>{document.body.classList.add('nav');scrim.classList.add('on')});
+  scrim.addEventListener('click',()=>{document.body.classList.remove('nav');scrim.classList.remove('on')});
+  const ta=document.querySelector('textarea'),send=document.querySelector('.send');
+  ta.addEventListener('input',()=>{ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,180)+'px';send.disabled=!ta.value.trim()});
+  ta.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ta.value='';ta.style.height='auto';send.disabled=true;}});
+  document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+    ta.value=c.querySelector('b').textContent;ta.dispatchEvent(new Event('input'));
+    document.querySelector('.empty').style.display='none';document.getElementById('thread').style.display='block';}));
+</script>
+</body>
+</html>

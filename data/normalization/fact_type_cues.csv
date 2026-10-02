@@ -1,0 +1,48 @@
+fact_type,cue,corpus_count,group,proven_in_corpus
+balloting_status,ballot,15,ballot,yes
+balloting_status,balloting,24,ballot,yes
+balloting_status,balloted,3,ballot,yes
+balloting_status,ballot date,3,ballot,yes
+possession_status,possession,29,possession,yes
+possession_status,possession open,0,possession,no
+possession_status,handing over,2,possession,yes
+possession_status,handed over,2,possession,yes
+possession_status,possessed,0,possession,no
+litigation_status,litigation,2,legal,yes
+litigation_status,court,1,legal,yes
+litigation_status,dispute,2,legal,yes
+litigation_status,legal,3,legal,yes
+litigation_status,cleared,0,legal,no
+fee_schedule,transfer fee,5,fee,yes
+fee_schedule,development charge,2,fee,yes
+fee_schedule,fee,7,fee,yes
+fee_schedule,dues,6,fee,yes
+fee_schedule,membership fee,0,fee,no
+tax_regime,tax,21,tax,yes
+tax_regime,fbr,10,tax,yes
+tax_regime,stamp duty,8,tax,yes
+tax_regime,non-filer,6,tax,yes
+tax_regime,236k,2,tax,yes
+tax_regime,236c,2,tax,yes
+tax_regime,advance tax,2,tax,yes
+transfer_process,transfer,38,transfer,yes
+transfer_process,verification,4,transfer,yes
+transfer_process,ndc,0,transfer,no
+transfer_process,no demand certificate,0,transfer,no
+transfer_process,clearance,0,transfer,no
+file_type,affidavit,97,file,yes
+file_type,allocation,133,file,yes
+file_type,barcode,10,file,yes
+file_type,balloted,3,file,yes
+file_type,unballoted,0,file,no
+rate,lac,149,money,yes
+rate,lakh,53,money,yes
+rate,crore,37,money,yes
+rate,rate,123,money,yes
+rate,price,132,money,yes
+rate,pkr,45,money,yes
+rate,cr,1,money,yes
+size,marla,204,size,yes
+size,kanal,38,size,yes
+size,square,6,size,yes
+size,sqft,0,size,no

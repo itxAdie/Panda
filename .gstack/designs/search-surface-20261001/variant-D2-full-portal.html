@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Panda D2 — full portal</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  /* Photo slots are neutral CSS gradients standing in for photography.
+     Nothing is taken from the source design. */
+  .nav { display:flex; align-items:center; gap:var(--s5); padding:var(--s4) 0; }
+  .brand { display:flex; align-items:center; gap:9px; font-weight:700; letter-spacing:-.02em; font-size:17px; }
+  .brand i { width:22px; height:22px; border-radius:7px; background:var(--ink); display:block; }
+  .links { display:flex; gap:var(--s5); font-size:var(--small); color:var(--ink-2); margin-left:auto; }
+  .links a::before { content:"•"; color:var(--ink-4); margin-right:9px; }
+  .links a:hover { color:var(--ink); }
+  @media (max-width:820px){ .links { display:none; } }
+
+  /* ---- hero with media ---- */
+  .hero { margin:0 calc(var(--s5) * -1); padding:var(--s7) var(--s5) var(--s6);
+          background:linear-gradient(150deg,#e8e4dd 0%,#d9d3c8 42%,#cfc9bd 100%);
+          position:relative; overflow:hidden; }
+  .hero::after { content:""; position:absolute; inset:0;
+          background:linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.1) 45%,rgba(255,255,255,.85) 100%); }
+  .hero-in { position:relative; z-index:1; max-width:1200px; margin:0 auto; }
+  .hero .display-1 { max-width:14ch; }
+  .hero .lede { margin:var(--s4) 0 var(--s6); max-width:40ch; }
+  @media (max-width:560px){ .hero{ padding:var(--s5) var(--s3) var(--s4); margin:0 calc(var(--s3) * -1);} }
+
+  /* ---- split results + map ---- */
+  .split { display:grid; grid-template-columns:1fr 400px; gap:var(--s5); align-items:start; }
+  @media (max-width:1000px){ .split{ grid-template-columns:1fr; } .mapwrap{ display:none; } }
+
+  .toolbar { display:flex; align-items:center; gap:var(--s4); flex-wrap:wrap;
+             padding-bottom:var(--s4); border-bottom:1px solid var(--line); margin-bottom:var(--s5); }
+  .toolbar .count { font-size:var(--h3); font-weight:650; letter-spacing:-.02em; }
+  .toolbar .right { margin-left:auto; display:flex; gap:var(--s2); flex-wrap:wrap; }
+
+  .grid2 { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--s4); }
+  @media (max-width:620px){ .grid2{ grid-template-columns:1fr; } }
+
+  .pcard .ph { aspect-ratio:16/10; position:relative; }
+  .pcard .ph.a { background:linear-gradient(140deg,#c9c2b4,#a89f8d); }
+  .pcard .ph.b { background:linear-gradient(140deg,#bfc4c0,#9aa39e); }
+  .pcard .ph.c { background:linear-gradient(140deg,#d4cdc2,#b0a696); }
+  .pcard .ph.d { background:linear-gradient(140deg,#c2c8d0,#98a1ab); }
+  .pcard .body { padding:var(--s4) var(--s4) var(--s4); }
+  .pcard .row { display:flex; align-items:baseline; justify-content:space-between; gap:var(--s3); margin-bottom:3px; }
+  .pcard .name { font-size:17px; font-weight:650; letter-spacing:-.015em; }
+  .pcard .price { font-size:17px; font-weight:650; letter-spacing:-.015em; white-space:nowrap; }
+  .pcard .loc { font-size:var(--micro); color:var(--ink-2); margin-bottom:var(--s3); }
+  .pcard .foot { display:flex; align-items:center; gap:var(--s2); margin-top:var(--s3);
+                 padding-top:var(--s3); border-top:1px solid var(--line-soft); }
+  .pcard .view { margin-left:auto; }
+
+  /* ---- map ---- */
+  .mapwrap { position:sticky; top:var(--s4); }
+  .map { aspect-ratio:1/1; border-radius:var(--r-card); border:1px solid var(--line);
+         background:#eef3f0; position:relative; overflow:hidden; }
+  .map svg { position:absolute; inset:0; width:100%; height:100%; }
+  .map .ctl { position:absolute; right:var(--s3); bottom:var(--s3); display:flex; flex-direction:column;
+              background:var(--bg); border:1px solid var(--line); border-radius:var(--r-btn);
+              overflow:hidden; box-shadow:var(--sh-1); }
+  .map .ctl button { width:34px; height:34px; border:0; background:transparent; cursor:pointer;
+                     color:var(--ink-2); display:grid; place-items:center; }
+  .map .ctl button + button { border-top:1px solid var(--line); }
+
+  /* ---- marketing ---- */
+  section.mark { padding:var(--s8) 0; }
+  .split-2 { display:grid; grid-template-columns:1fr 1fr; gap:var(--s7); align-items:center; }
+  @media (max-width:820px){ .split-2{ grid-template-columns:1fr; gap:var(--s5);} }
+  .big-media { aspect-ratio:4/3; border-radius:var(--r-card); }
+  .big-media.a { background:linear-gradient(140deg,#cdc6ba,#a49b8a); }
+  .big-media.b { background:linear-gradient(140deg,#c6cbc7,#9ba39e); }
+  .ticks { list-style:none; padding:0; margin:var(--s4) 0 var(--s5); display:flex; flex-direction:column; gap:var(--s2); }
+  .ticks li { display:flex; gap:var(--s2); font-size:var(--small); color:var(--ink-2); align-items:flex-start; }
+  .ticks svg { color:var(--accent); flex:0 0 auto; margin-top:3px; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s4); }
+  @media (max-width:760px){ .grid3{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <nav class="nav">
+    <div class="brand"><i></i> Panda</div>
+    <div class="links">
+      <a href="#">Buy</a><a href="#">Rent</a><a href="#">Balloting</a><a href="#">Fees</a>
+      <span class="pill" style="cursor:default">Contact us</span>
+    </div>
+  </nav>
+
+  <!-- ================================================== hero =========== -->
+  <section class="hero">
+    <div class="hero-in">
+      <h1 class="display-1">Discover a place to call home.</h1>
+      <p class="lede">Rates, balloting and possession status across DHA, Bahria and Gulberg —
+        each one sourced, dated and attributed.</p>
+
+      <div class="search">
+        <div class="tabs">
+          <button class="tab on">Buy <span class="n">10</span></button>
+          <button class="tab">Rent <span class="n">0</span></button>
+          <button class="tab">Balloting <span class="n">2</span></button>
+        </div>
+        <div class="bar">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          <input type="text" value="4 marla under 60 lac in Lahore" placeholder="Try “10 marla under 55 lac”">
+          <button class="ghost"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button>
+          <button class="go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="pill-row scroll" style="margin-top:var(--s4)">
+        <button class="pill">4 marla allocation in DHA Phase 7</button>
+        <button class="pill">balloting in DHA Phase 10</button>
+        <button class="pill">fees in DHA Phase 6</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================ results =========== -->
+  <section style="padding:var(--s7) 0 0">
+    <div class="split">
+
+      <div>
+        <div class="toolbar">
+          <div class="count">10 Homes For Sale</div>
+          <div class="right">
+            <button class="pill">Save Search</button>
+            <button class="pill on">New to Market</button>
+            <button class="pill">Price Drop <span class="n">2</span></button>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <article class="card pcard">
+            <div class="ph a"></div>
+            <div class="body">
+              <div class="row"><div class="name">DHA Phase 7</div><div class="price">133.00 Lacs</div></div>
+              <div class="loc">4 marla · Allocation · Lahore</div>
+              <div class="specs">
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg> 4.00 marla</span>
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg> Allocation</span>
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 26 Sep</span>
+              </div>
+              <div class="foot">
+                <span class="badge">complete</span>
+                <button class="pill view">View Details</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card pcard">
+            <div class="ph b"></div>
+            <div class="body">
+              <div class="row"><div class="name">DHA Phase 9 Prism</div><div class="price">218 Lacs</div></div>
+              <div class="loc">4 marla · Affidavit · Lahore</div>
+              <div class="specs">
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg> 4.00 marla</span>
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg> Affidavit</span>
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 26 Sep</span>
+              </div>
+              <div class="foot">
+                <span class="badge">complete</span>
+                <button class="pill view">View Details</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card pcard">
+            <div class="ph c"></div>
+            <div class="body">
+              <div class="row"><div class="name">DHA Phase 9 Town</div><div class="price">Affidavit open</div></div>
+              <div class="loc">Affidavit file · Lahore</div>
+              <div class="specs">
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg> Affidavit</span>
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 26 Sep</span>
+              </div>
+              <div class="foot">
+                <span class="badge warn">partial</span>
+                <button class="pill view">View Details</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card pcard">
+            <div class="ph d"></div>
+            <div class="body">
+              <div class="row"><div class="name">DHA Phase 10</div><div class="price">Balloting</div></div>
+              <div class="loc">Announcements confirmed · no ballot date</div>
+              <div class="specs">
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg> Announcement</span>
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 26 Sep</span>
+              </div>
+              <div class="foot">
+                <span class="badge warn">partial</span>
+                <button class="pill view">View Details</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- the honest one -->
+        <div class="none" style="margin-top:var(--s4)">
+          <h3>Nothing in the corpus matches “fees in DHA Phase 6”.</h3>
+          <p>Searched every stored fact for DHA Phase 6, filtered to fees. Returned 0 facts covering 0 places.</p>
+          <p class="hard">This is a statement about Panda’s corpus only. It is not a statement about the
+            Lahore market, and it does not mean no such fees exist. Verify with DHA, LDA and a lawyer.</p>
+        </div>
+      </div>
+
+      <!-- map -->
+      <div class="mapwrap">
+        <div class="map">
+          <svg viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true">
+            <rect width="400" height="400" fill="#eef3f0"/>
+            <path d="M0 120 Q100 100 200 140 T400 120" stroke="#cfe0d4" stroke-width="26" fill="none"/>
+            <path d="M-20 300 Q120 260 240 300 T420 280" stroke="#cfe0d4" stroke-width="20" fill="none"/>
+            <g stroke="#ffffff" stroke-width="7" fill="none" stroke-linecap="round">
+              <path d="M60 0 V400"/><path d="M150 0 V400"/><path d="M250 0 V400"/><path d="M330 0 V400"/>
+              <path d="M0 70 H400"/><path d="M0 200 H400"/><path d="M0 250 H400"/><path d="M0 360 H400"/>
+            </g>
+            <g stroke="#d8d5cd" stroke-width="3" fill="none">
+              <path d="M0 170 H400"/><path d="M100 0 V400"/><path d="M290 0 V400"/>
+            </g>
+          </svg>
+          <svg viewBox="0 0 24 24" style="position:absolute;left:26%;top:30%;width:26px;height:26px;color:#ef4444" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+          <svg viewBox="0 0 24 24" style="position:absolute;left:44%;top:22%;width:26px;height:26px;color:#ef4444" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+          <svg viewBox="0 0 24 24" style="position:absolute;left:33%;top:48%;width:26px;height:26px;color:#ef4444" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+          <svg viewBox="0 0 24 24" style="position:absolute;left:58%;top:44%;width:26px;height:26px;color:#ef4444" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+          <svg viewBox="0 0 24 24" style="position:absolute;left:48%;top:66%;width:26px;height:26px;color:#ef4444" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+          <div class="ctl">
+            <button aria-label="Zoom in"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            <button aria-label="Zoom out"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================= marketing =========== -->
+  <section class="mark">
+    <div class="split-2">
+      <div>
+        <h2 class="display-2">Explore our facts</h2>
+        <p class="lede" style="margin-top:var(--s4)">We help you read the record: what a society
+          published, when it published it, and where it came from.</p>
+      </div>
+      <div class="big-media a"></div>
+    </div>
+  </section>
+
+  <section class="mark" style="padding-top:0">
+    <div class="split-2">
+      <div class="big-media b"></div>
+      <div>
+        <h2 class="display-2">The smarter way to buy</h2>
+        <p class="lede" style="margin-top:var(--s4)">Every rate carries a qualifier telling you how
+          complete it is, so you can tell an asking price from a confirmed transaction.</p>
+        <ul class="ticks">
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Every fact quoted verbatim from its source</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Publication date on everything</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Qualifier status on every number</li>
+        </ul>
+        <button class="pill">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" style="margin:var(--s8) 0 var(--s5)">
+  <p class="muted" style="font-size:var(--small);max-width:70ch">
+    Panda reports only what its corpus can source. Counts reflect stored facts, not listings or
+    market inventory. Nothing here is advice.
+  </p>
+</div>
+</body>
+</html>

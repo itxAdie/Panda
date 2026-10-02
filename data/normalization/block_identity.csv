@@ -1,0 +1,58 @@
+phase,letter,labels_observed,sources,source_count,verified,single_source,occurrences
+DHA Phase 3,X,Block,mohsinestate,1,false,true,4
+DHA Phase 4,KK,Block,mohsinestate,1,false,true,2
+DHA Phase 5,A,Block,mohsinestate,1,false,true,2
+DHA Phase 5,B,Block,mohsinestate,1,false,true,5
+DHA Phase 5,H,Block,mohsinestate,1,false,true,2
+DHA Phase 5,J,Block,mohsinestate,1,false,true,2
+DHA Phase 5,L,Block,mohsinestate,1,false,true,2
+DHA Phase 5,M,Block,lahorerealestate;mohsinestate,2,true,false,3
+DHA Phase 6,A,Block,mohsinestate,1,false,true,2
+DHA Phase 6,B,Block,mohsinestate,1,false,true,2
+DHA Phase 6,C,Block,mohsinestate,1,false,true,2
+DHA Phase 6,D,Block,mohsinestate,1,false,true,14
+DHA Phase 6,E,Block,mohsinestate,1,false,true,5
+DHA Phase 6,F,Block,mohsinestate,1,false,true,2
+DHA Phase 6,G,Block,mohsinestate,1,false,true,2
+DHA Phase 6,H,Block,mohsinestate,1,false,true,2
+DHA Phase 6,J,Block,mohsinestate,1,false,true,2
+DHA Phase 6,K,Block,mohsinestate,1,false,true,3
+DHA Phase 6,L,Block,mohsinestate,1,false,true,2
+DHA Phase 6,M,Block,mohsinestate,1,false,true,2
+DHA Phase 6,N,Block,mohsinestate,1,false,true,2
+DHA Phase 7,CCA,Block,mohsinestate,1,false,true,2
+DHA Phase 7,P,Block,mohsinestate,1,false,true,2
+DHA Phase 7,Q,Block,mohsinestate,1,false,true,4
+DHA Phase 7,R,Block,mohsinestate,1,false,true,2
+DHA Phase 7,S,Block,mohsinestate,1,false,true,3
+DHA Phase 7,T,Block,mohsinestate,1,false,true,6
+DHA Phase 7,U,Block;Sector,mohsinestate,1,false,true,8
+DHA Phase 7,V,Block,mohsinestate,1,false,true,2
+DHA Phase 7,W,Block,mohsinestate,1,false,true,1
+DHA Phase 7,X,Block,mohsinestate,1,false,true,3
+DHA Phase 7,Y,Block,mohsinestate,1,false,true,15
+DHA Phase 7,Z,Block,mohsinestate,1,false,true,1
+DHA Phase 7,Z2,Block,mohsinestate,1,false,true,2
+DHA Phase 8,S,Block,mohsinestate,1,false,true,13
+DHA Phase 8,T,Block,mohsinestate,1,false,true,2
+DHA Phase 8,U,Block,mohsinestate,1,false,true,2
+DHA Phase 8,V,Block,mohsinestate,1,false,true,2
+DHA Phase 8,W,Block,mohsinestate,1,false,true,2
+DHA Phase 8,X,Block,mohsinestate,1,false,true,2
+DHA Phase 8,Y,Block,mohsinestate,1,false,true,4
+DHA Phase 9 Prism,A,Block;Sector,mohsinestate,1,false,true,6
+DHA Phase 9 Prism,B,Block,mohsinestate,1,false,true,2
+DHA Phase 9 Prism,C,Block,mohsinestate,1,false,true,2
+DHA Phase 9 Prism,D,Block,mohsinestate,1,false,true,5
+DHA Phase 9 Prism,E,Block,mohsinestate,1,false,true,2
+DHA Phase 9 Prism,F,Block,mohsinestate,1,false,true,3
+DHA Phase 9 Prism,G,Block,mohsinestate,1,false,true,2
+DHA Phase 9 Prism,H,Block,mohsinestate,1,false,true,2
+DHA Phase 9 Prism,K,Block,mohsinestate,1,false,true,5
+DHA Phase 9 Prism,L,Block,mohsinestate,1,false,true,6
+DHA Phase 9 Prism,M,Block,mohsinestate,1,false,true,2
+DHA Phase 9 Prism,N,Block,mohsinestate,1,false,true,6
+DHA Phase 9 Prism,P,Block,mohsinestate,1,false,true,2
+DHA Phase 9 Prism,Q,Block,mohsinestate,1,false,true,17
+DHA Phase 9 Prism,R,Block,mohsinestate,1,false,true,5
+DHA Phase 9 Town,E,Block,mohsinestate,1,false,true,2

@@ -1,0 +1,216 @@
+{
+  "_comment": "Milestone 4 dry-run proposals. Produced by the engineer reading the real page text, in place of a live LLM (no API credentials in this environment). Includes genuine candidates AND the failure modes a real model produces - paraphrase, arithmetic, fabricated framing, invented dates, entity over-reach. Every row goes through the same V1-V8 validators.",
+  "burst": [
+    {
+      "as_of": "2026-08-22",
+      "fact_type": "rate",
+      "place_ref": "Sector S",
+      "raw_quote": "The most expensive sector for houses is Sector S, averaging 10.68 Crore at 29,000 per square foot, up 20% in a year.",
+      "value": "10.68 Crore"
+    },
+    {
+      "as_of": "2026-08-22",
+      "fact_type": "rate",
+      "place_ref": "Askari 10",
+      "raw_quote": "The strongest return on the board is Sector F flats at 4.47% gross, based on a 3.68 Crore purchase renting at 1.37 Lakh a month",
+      "value": "4.47%"
+    },
+    {
+      "as_of": "2026-08-22",
+      "fact_type": "possession_status",
+      "place_ref": "Askari 10",
+      "raw_quote": "there is no plot file market. The society is built out. You are buying a house or a flat, not a file.",
+      "value": "no plot file market; the society is fully built out"
+    }
+  ],
+  "cdb_ph10": [
+    {
+      "as_of": "2026-09-10",
+      "fact_type": "balloting_status",
+      "place_ref": "DHA Phase 10",
+      "raw_quote": "DHA Lahore has shared an official notice on its verified pages. In short, August 2026 will bring a series of major announcements about the phase, and balloting sits right at the top of that list.",
+      "value": "DHA Lahore has confirmed that August 2026 will bring major announcements, with balloting at the top of the list; no ballot date has been published"
+    },
+    {
+      "fact_type": "balloting_status",
+      "place_ref": "DHA Phase 10",
+      "raw_quote": "DHA has confirmed that announcements are coming. It has not published a ballot date, a final price list, or an approved master plan. Therefore, anyone quoting an exact balloting date today is guessing.",
+      "value": "confirmed announcements, no published ballot date"
+    },
+    {
+      "fact_type": "rate",
+      "place_ref": "DHA Phase 10",
+      "raw_quote": "5 Marla 30.5 to 31 lakh 10 Marla 55 to 55.5 lakh",
+      "value": "55 to 55.5 lakh"
+    },
+    {
+      "fact_type": "possession_status",
+      "place_ref": "DHA Phase 10",
+      "raw_quote": "Balloting was scheduled for 5 February 2026 through five designated banks: MCB, Bank Alfalah, Askari Bank, HBL and Meezan Bank.",
+      "value": "balloting was scheduled for 5 February 2026 through five designated banks; the schedule did not hold"
+    },
+    {
+      "fact_type": "balloting_status",
+      "place_ref": "DHA Phase 12",
+      "raw_quote": "Balloting was scheduled for 5 February 2026 through five designated banks: MCB, Bank Alfalah, Askari Bank, HBL and Meezan Bank.",
+      "value": "expected"
+    }
+  ],
+  "dha_rates": [
+    {
+      "as_of": "2026-08-17",
+      "fact_type": "rate",
+      "file_type": "allocation",
+      "place_ref": "DHA Phase 13",
+      "raw_quote": "5 Marla Allocation 19.50 Lac 10 Marla Allocation 30.50 Lac 20 Marla Allocation 58.00 Lac",
+      "size_marla": "10",
+      "value": "30.50 Lac"
+    },
+    {
+      "as_of": "17 August 2026",
+      "fact_type": "rate",
+      "file_type": "allocation",
+      "place_ref": "DHA Phase 13",
+      "raw_quote": "5 Marla Allocation 19.50 Lac 10 Marla Allocation 30.50 Lac 20 Marla Allocation 58.00 Lac",
+      "size_marla": "20",
+      "value": "58.00 Lac"
+    },
+    {
+      "fact_type": "size",
+      "place_ref": "DHA Phase 13",
+      "raw_quote": "5 Marla Allocation 19.50 Lac 10 Marla Allocation 30.50 Lac",
+      "value": "10 Marla"
+    },
+    {
+      "fact_type": "rate",
+      "file_type": "allocation",
+      "place_ref": "DHA Phase 13",
+      "raw_quote": "5 Marla Allocation 19.50 Lac 10 Marla Allocation 30.50 Lac",
+      "size_marla": "10",
+      "value": "15.25 Lac"
+    },
+    {
+      "as_of": "2026-08-17",
+      "fact_type": "rate",
+      "file_type": "allocation",
+      "place_ref": "DHA Phase 13",
+      "raw_quote": "DHA Lahore Phase 13 allocation files are trading at an average of 30.50 Lac per marla",
+      "size_marla": "10",
+      "value": "30.50 Lac"
+    },
+    {
+      "as_of": "2021-04-02",
+      "fact_type": "rate",
+      "file_type": "allocation",
+      "place_ref": "DHA Phase 13",
+      "raw_quote": "5 Marla Allocation 19.50 Lac 10 Marla Allocation 30.50 Lac",
+      "size_marla": "10",
+      "value": "30.50 Lac"
+    },
+    {
+      "as_of": "2026-08-17",
+      "fact_type": "rate",
+      "file_type": "allocation",
+      "place_ref": "DHA Phase 2",
+      "raw_quote": "5 Marla Allocation 19.50 Lac 10 Marla Allocation 30.50 Lac",
+      "size_marla": "10",
+      "value": "30.50 Lac"
+    },
+    {
+      "as_of": "2026-08-17",
+      "fact_type": "rate",
+      "file_type": "allocation",
+      "place_ref": "Sector B",
+      "raw_quote": "5 Marla Allocation 19.50 Lac 10 Marla Allocation 30.50 Lac",
+      "size_marla": "10",
+      "value": "30.50 Lac"
+    },
+    {
+      "fact_type": "rate_band",
+      "place_ref": "DHA Phase 13",
+      "raw_quote": "5 Marla Allocation 19.50 Lac 10 Marla Allocation 30.50 Lac",
+      "value": "19.50-30.50 Lac"
+    },
+    {
+      "as_of": "2026-08-17",
+      "fact_type": "rate",
+      "file_type": "allocation",
+      "place_ref": "ph_dha_13",
+      "raw_quote": "5 Marla Allocation 19.50 Lac 10 Marla Allocation 30.50 Lac",
+      "size_marla": "10",
+      "value": "30.50 Lac"
+    }
+  ],
+  "lre_sep": [
+    {
+      "as_of": "2026-09-26",
+      "fact_type": "rate",
+      "file_type": "allocation",
+      "place_ref": "DHA Phase 7",
+      "raw_quote": "DHA Phase 7 Files 4 Marla Affidavit: NA 4 Marla Allocation: 133.00 Lacs",
+      "size_marla": "4",
+      "value": "133.00 Lacs"
+    },
+    {
+      "as_of": "2026-09-26",
+      "fact_type": "rate",
+      "place_ref": "DHA Phase 6",
+      "raw_quote": "DHA Phase 6 CCA-3 Files 4 Marla Affidavit: 600 Lacs",
+      "value": "600 Lacs"
+    },
+    {
+      "as_of": "2026-09-26",
+      "fact_type": "rate",
+      "file_type": "affidavit",
+      "place_ref": "DHA Phase 9 Prism",
+      "raw_quote": "DHA Phase 9 Prism Files 4 Marla Affidavit: 218 Lacs 4 Marla Allocation: 196 Lacs",
+      "size_marla": "4",
+      "value": "218 Lacs"
+    },
+    {
+      "as_of": "2026-09-26",
+      "fact_type": "rate",
+      "place_ref": "DHA Phase 10",
+      "raw_quote": "DHA Phase 10 Files 8 Marla Affidavit: On Call",
+      "value": "On Call"
+    },
+    {
+      "as_of": "2026-09-26",
+      "fact_type": "file_type",
+      "place_ref": "DHA Phase 9 Town",
+      "raw_quote": "DHA Phase 9 Town Files 4 Marla Affidavit: 230 Lacs",
+      "value": "affidavit"
+    },
+    {
+      "fact_type": "rate",
+      "file_type": "allocation",
+      "place_ref": "Rahbar Sector-4",
+      "raw_quote": "DHA Phase 9 Town Files 4 Marla Affidavit: 230 Lacs 4 Marla Allocation: 215 Lacs",
+      "size_marla": "4",
+      "value": "215 Lacs"
+    }
+  ],
+  "milkiyat": [
+    {
+      "as_of": "2026-08-15",
+      "fact_type": "rate",
+      "place_ref": "LDA City",
+      "raw_quote": "Median plot prices run from roughly PKR 6-9 lakh per marla in LDA City and the Ring Road periphery up to PKR 55-75 lakh per marla in Model Town and Gulberg",
+      "value": "PKR 6-9 lakh per marla"
+    },
+    {
+      "as_of": "2026-06-30",
+      "fact_type": "rate",
+      "place_ref": "Gulberg",
+      "raw_quote": "the average residential plot in Lahore as a whole was PKR 2.69 crore in June 2026, up roughly 12% year on year",
+      "value": "PKR 2.69 crore"
+    },
+    {
+      "as_of": "2026-04-30",
+      "fact_type": "tax_regime",
+      "place_ref": "LDA City",
+      "raw_quote": "Punjab cut stamp duty to 1% in April 2026, reducing the friction cost of documented transfers.",
+      "value": "Punjab stamp duty cut to 1% in April 2026"
+    }
+  ]
+}

@@ -1,2 +1,11 @@
 .env
 .venv/
+
+# Ignore all files in the .gstack directory 
+.gstack/*
+
+# Docs
+docs/*
+
+# Data
+data/*

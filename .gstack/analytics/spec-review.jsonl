@@ -1,1 +1,0 @@
-{"ts":"2026-09-30T16:12:23+05:00","tool":"gstack-office-hours-review","document":"/home/orhan/Desktop/AI Agents/Lead Agent/docs/designs/lead-agent-delegation-receipt.md","rounds":2,"findings":39,"fixed":18,"remaining":19,"quality_before":6,"quality_after":7,"stop":"CONVERGENCE","rejected_findings":["R2-3 arithmetic false positive"]}
